@@ -1,3 +1,8 @@
+/*
+ * Created by MVG
+ * (C) 2019 Moscow, Russia
+ * */
+
 import java.util.*;
 
 /*

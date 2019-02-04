@@ -17,8 +17,11 @@ public class MainClass {
         String[] stringArray = {"AAAA", "ABBA", "ABAA", "AABA", "AAAA", "AABB", "AAAA", "BAAB", "AAAA", "BABB", "AABB", "AAAA", "BAAB", "AAAA", "BABB"};
 
         // Задание 1 .Вариант 1. Через ArrayList
-        ArrayList<String> stringList = new ArrayList<>();
-        ArrayList<Integer> counterList = new ArrayList<>();// список для хранения счетчиков
+        List<String> stringList = new ArrayList<>();
+
+
+        List<Integer> counterList = new ArrayList<>();// список для хранения счетчиков
+
         // копируем в динамический массив
         for (int i = 0; i < stringArray.length; i++) {
             stringList.add(stringArray[i]);
@@ -44,6 +47,26 @@ public class MainClass {
             stringMap.put(stringArray[i], counterForElement == null ? 1 : counterForElement + 1);
         }
         System.out.println(stringMap);
+
+        // Разбор ДЗ
+        List <String> wordList = Arrays.asList(stringArray);
+        Map<String, Integer> result = new HashMap<>();
+        for (String word:wordList){
+            result.put(word, Collections.frequency(wordList, word));
+        }
+        System.out.println(result);
+
+        result = new HashMap<>();
+
+        for (String word:wordList){
+            if (result.containsKey(word))
+            {
+                result.put(word, result.get(word)+1);
+                continue;
+            }
+            result.put(word, 1);
+        }
+        System.out.println(result);
 
         // Задание 2.
         PhoneBook testBook = new PhoneBook();
